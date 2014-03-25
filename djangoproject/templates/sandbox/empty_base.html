@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href='/static/css2/reset.css' rel='stylesheet' type='text/css'/>
+    <link href='/static/css2/fs_style.css' rel='stylesheet' type='text/css'/>
+    <link href='/static/css2/fs_structure.css' rel='stylesheet' type='text/css'/>
+    <link href='/static/css2/bootstrap_ish.css' rel='stylesheet' type='text/css'/>
+	<link href="/static/css2/freedom_bootstrap.css" rel="stylesheet" media="screen">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+{% endblock %}
+    <script src="/static/bootstrap/js/jquery.js"></script>
+    <script src="/static/bootstrap3/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $('.popopo').popover({trigger:'hover'});
+            $(".popopo_stay")
+                    .popover({
+                        offset: 10,
+                        trigger: 'manual',
+                        animate: false,
+                        html: true,
+                        {#                placement: 'right',#}
+                        template: '<div class="popover" onmouseover="$(this).mouseleave(function() {$(this).hide(); });"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+
+                    }).click(function(e) {
+                        e.preventDefault() ;
+                    }).mouseenter(function(e) {
+                        $(this).popover('show');
+                    });
+        });
+    </script>
+</body>
+</html>

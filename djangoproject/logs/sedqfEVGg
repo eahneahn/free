@@ -1,0 +1,970 @@
+2014-01-14 23:59:35,630 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-14 23:59:49,241 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 00:35:07,699 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 09:49:54,838 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:08:31,854 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:17:26,575 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:21:50,460 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:24:02,517 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:25:16,423 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:25:42,728 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:25:46,504 [DEBUG] south: execute "CREATE TABLE "bitcoin_frespo_receiveaddress" ("id" serial NOT NULL PRIMARY KEY, "address" varchar(128) NOT NULL, "available" boolean NOT NULL)" with params "[]"
+2014-01-15 10:25:46,593 [DEBUG] south: execute "CREATE TABLE "bitcoin_frespo_moneysent" ("id" serial NOT NULL PRIMARY KEY, "from_address" varchar(128) NOT NULL, "to_address" varchar(128) NOT NULL, "value" numeric(16, 8) NOT NULL, "transaction_hash" varchar(128) NULL, "status" varchar(30) NOT NULL, "creationDate" timestamp with time zone NOT NULL, "lastChangeDate" timestamp with time zone NOT NULL)" with params "[]"
+2014-01-15 10:25:46,965 [DEBUG] south: execute "CREATE TABLE "frespo_currencies_rates" ("id" serial NOT NULL PRIMARY KEY, "last_update" timestamp with time zone NOT NULL, "google_data" text NOT NULL, "blockchain_data" text NOT NULL)" with params "[]"
+2014-01-15 10:25:47,044 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" DROP COLUMN "last_update" CASCADE;" with params "[]"
+2014-01-15 10:25:47,061 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField FakeModel.last_update_blockchain received a naive datetime (2013-11-19 00:00:00) while time zone support is active.
+  RuntimeWarning)
+
+2014-01-15 10:25:47,064 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" ADD COLUMN "last_update_blockchain" timestamp with time zone NOT NULL DEFAULT '2013-11-19 00:00:00-02:00';" with params "[]"
+2014-01-15 10:25:47,108 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" ALTER COLUMN "last_update_blockchain" TYPE timestamp with time zone, ALTER COLUMN "last_update_blockchain" SET NOT NULL, ALTER COLUMN "last_update_blockchain" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:47,114 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" ADD COLUMN "oer_data" text NOT NULL DEFAULT '';" with params "[]"
+2014-01-15 10:25:47,140 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" ALTER COLUMN "oer_data" TYPE text, ALTER COLUMN "oer_data" SET NOT NULL, ALTER COLUMN "oer_data" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:47,144 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField FakeModel.last_update_oer received a naive datetime (2013-11-19 00:00:00) while time zone support is active.
+  RuntimeWarning)
+
+2014-01-15 10:25:47,147 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" ADD COLUMN "last_update_oer" timestamp with time zone NOT NULL DEFAULT '2013-11-19 00:00:00-02:00';" with params "[]"
+2014-01-15 10:25:47,181 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" ALTER COLUMN "last_update_oer" TYPE timestamp with time zone, ALTER COLUMN "last_update_oer" SET NOT NULL, ALTER COLUMN "last_update_oer" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:47,226 [DEBUG] south: execute "ALTER TABLE "frespo_currencies_rates" DROP COLUMN "google_data" CASCADE;" with params "[]"
+2014-01-15 10:25:48,181 [DEBUG] south: execute "CREATE TABLE "core_userinfo" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "paypalEmail" varchar(256) NOT NULL, "screenName" varchar(64) NOT NULL, "realName" varchar(256) NOT NULL, "website" varchar(128) NULL, "about" text NULL, "receiveAllEmail" boolean NOT NULL, "brazilianPaypal" boolean NOT NULL)" with params "[]"
+2014-01-15 10:25:48,220 [DEBUG] south: execute "CREATE TABLE "core_project" ("id" serial NOT NULL PRIMARY KEY, "name" varchar(200) NOT NULL, "createdByUser_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL, "homeURL" varchar(200) NULL, "trackerURL" varchar(200) NULL)" with params "[]"
+2014-01-15 10:25:48,255 [DEBUG] south: execute "CREATE TABLE "core_issue" ("id" serial NOT NULL PRIMARY KEY, "project_id" integer NULL, "key" varchar(30) NULL, "title" varchar(400) NOT NULL, "description" text NULL, "createdByUser_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL, "trackerURL" varchar(200) NULL)" with params "[]"
+2014-01-15 10:25:48,285 [DEBUG] south: execute "CREATE TABLE "core_issuecomment" ("id" serial NOT NULL PRIMARY KEY, "issue_id" integer NOT NULL, "author_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL, "content" text NOT NULL)" with params "[]"
+2014-01-15 10:25:48,329 [DEBUG] south: execute "CREATE TABLE "core_issuecommenthistevent" ("id" serial NOT NULL PRIMARY KEY, "comment_id" integer NOT NULL, "eventDate" timestamp with time zone NOT NULL, "content" text NOT NULL, "event" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,361 [DEBUG] south: execute "CREATE TABLE "core_offer" ("id" serial NOT NULL PRIMARY KEY, "issue_id" integer NOT NULL, "sponsor_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL, "lastChangeDate" timestamp with time zone NOT NULL, "price" numeric(9, 2) NOT NULL, "acceptanceCriteria" text NULL, "status" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,410 [DEBUG] south: execute "CREATE TABLE "core_offerhistevent" ("id" serial NOT NULL PRIMARY KEY, "offer_id" integer NOT NULL, "eventDate" timestamp with time zone NOT NULL, "price" numeric(9, 2) NOT NULL, "acceptanceCriteria" text NULL, "status" varchar(30) NOT NULL, "event" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,448 [DEBUG] south: execute "CREATE TABLE "core_offercomment" ("id" serial NOT NULL PRIMARY KEY, "offer_id" integer NOT NULL, "author_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL, "content" text NOT NULL)" with params "[]"
+2014-01-15 10:25:48,480 [DEBUG] south: execute "CREATE TABLE "core_offercommenthistevent" ("id" serial NOT NULL PRIMARY KEY, "comment_id" integer NOT NULL, "eventDate" timestamp with time zone NOT NULL, "content" text NOT NULL, "event" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,515 [DEBUG] south: execute "CREATE TABLE "core_solution" ("id" serial NOT NULL PRIMARY KEY, "issue_id" integer NOT NULL, "programmer_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL, "lastChangeDate" timestamp with time zone NOT NULL, "status" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,537 [DEBUG] south: execute "CREATE TABLE "core_solutionhistevent" ("id" serial NOT NULL PRIMARY KEY, "solution_id" integer NOT NULL, "eventDate" timestamp with time zone NOT NULL, "status" varchar(30) NOT NULL, "event" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,564 [DEBUG] south: execute "CREATE TABLE "core_payment" ("id" serial NOT NULL PRIMARY KEY, "offer_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL, "lastChangeDate" timestamp with time zone NOT NULL, "paykey" varchar(128) NULL, "confirm_key" varchar(128) NULL, "status" varchar(30) NOT NULL, "fee" numeric(9, 2) NOT NULL, "total" numeric(9, 2) NOT NULL, "currency" varchar(10) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,587 [DEBUG] south: execute "CREATE TABLE "core_paymenthistevent" ("id" serial NOT NULL PRIMARY KEY, "payment_id" integer NOT NULL, "eventDate" timestamp with time zone NOT NULL, "status" varchar(30) NOT NULL, "event" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,611 [DEBUG] south: execute "CREATE TABLE "core_paymentpart" ("id" serial NOT NULL PRIMARY KEY, "payment_id" integer NOT NULL, "programmer_id" integer NOT NULL, "price" numeric(9, 2) NOT NULL, "realprice" numeric(9, 2) NOT NULL)" with params "[]"
+2014-01-15 10:25:48,627 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD CONSTRAINT "user_id_refs_id_e69847ca" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,636 [DEBUG] south: execute "CREATE INDEX "core_userinfo_user_id" ON "core_userinfo" ("user_id");" with params "[]"
+2014-01-15 10:25:48,646 [DEBUG] south: execute "ALTER TABLE "core_project" ADD CONSTRAINT "createdByUser_id_refs_id_512a3ec4" FOREIGN KEY ("createdByUser_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,655 [DEBUG] south: execute "CREATE INDEX "core_project_createdByUser_id" ON "core_project" ("createdByUser_id");" with params "[]"
+2014-01-15 10:25:48,665 [DEBUG] south: execute "ALTER TABLE "core_issue" ADD CONSTRAINT "project_id_refs_id_30ce5f79" FOREIGN KEY ("project_id") REFERENCES "core_project" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,673 [DEBUG] south: execute "CREATE INDEX "core_issue_project_id" ON "core_issue" ("project_id");" with params "[]"
+2014-01-15 10:25:48,682 [DEBUG] south: execute "ALTER TABLE "core_issue" ADD CONSTRAINT "createdByUser_id_refs_id_e61fdba2" FOREIGN KEY ("createdByUser_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,688 [DEBUG] south: execute "CREATE INDEX "core_issue_createdByUser_id" ON "core_issue" ("createdByUser_id");" with params "[]"
+2014-01-15 10:25:48,696 [DEBUG] south: execute "ALTER TABLE "core_issuecomment" ADD CONSTRAINT "issue_id_refs_id_bb1133af" FOREIGN KEY ("issue_id") REFERENCES "core_issue" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,703 [DEBUG] south: execute "CREATE INDEX "core_issuecomment_issue_id" ON "core_issuecomment" ("issue_id");" with params "[]"
+2014-01-15 10:25:48,711 [DEBUG] south: execute "ALTER TABLE "core_issuecomment" ADD CONSTRAINT "author_id_refs_id_3921b779" FOREIGN KEY ("author_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,720 [DEBUG] south: execute "CREATE INDEX "core_issuecomment_author_id" ON "core_issuecomment" ("author_id");" with params "[]"
+2014-01-15 10:25:48,728 [DEBUG] south: execute "ALTER TABLE "core_issuecommenthistevent" ADD CONSTRAINT "comment_id_refs_id_a2be3762" FOREIGN KEY ("comment_id") REFERENCES "core_issuecomment" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,735 [DEBUG] south: execute "CREATE INDEX "core_issuecommenthistevent_comment_id" ON "core_issuecommenthistevent" ("comment_id");" with params "[]"
+2014-01-15 10:25:48,745 [DEBUG] south: execute "ALTER TABLE "core_offer" ADD CONSTRAINT "issue_id_refs_id_1dbbdba6" FOREIGN KEY ("issue_id") REFERENCES "core_issue" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,752 [DEBUG] south: execute "CREATE INDEX "core_offer_issue_id" ON "core_offer" ("issue_id");" with params "[]"
+2014-01-15 10:25:48,761 [DEBUG] south: execute "ALTER TABLE "core_offer" ADD CONSTRAINT "sponsor_id_refs_id_537ebe7b" FOREIGN KEY ("sponsor_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,767 [DEBUG] south: execute "CREATE INDEX "core_offer_sponsor_id" ON "core_offer" ("sponsor_id");" with params "[]"
+2014-01-15 10:25:48,776 [DEBUG] south: execute "ALTER TABLE "core_offerhistevent" ADD CONSTRAINT "offer_id_refs_id_31954269" FOREIGN KEY ("offer_id") REFERENCES "core_offer" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,782 [DEBUG] south: execute "CREATE INDEX "core_offerhistevent_offer_id" ON "core_offerhistevent" ("offer_id");" with params "[]"
+2014-01-15 10:25:48,792 [DEBUG] south: execute "ALTER TABLE "core_offercomment" ADD CONSTRAINT "offer_id_refs_id_2fe79354" FOREIGN KEY ("offer_id") REFERENCES "core_offer" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,798 [DEBUG] south: execute "CREATE INDEX "core_offercomment_offer_id" ON "core_offercomment" ("offer_id");" with params "[]"
+2014-01-15 10:25:48,806 [DEBUG] south: execute "ALTER TABLE "core_offercomment" ADD CONSTRAINT "author_id_refs_id_948396db" FOREIGN KEY ("author_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,812 [DEBUG] south: execute "CREATE INDEX "core_offercomment_author_id" ON "core_offercomment" ("author_id");" with params "[]"
+2014-01-15 10:25:48,822 [DEBUG] south: execute "ALTER TABLE "core_offercommenthistevent" ADD CONSTRAINT "comment_id_refs_id_7b9de24b" FOREIGN KEY ("comment_id") REFERENCES "core_offercomment" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,829 [DEBUG] south: execute "CREATE INDEX "core_offercommenthistevent_comment_id" ON "core_offercommenthistevent" ("comment_id");" with params "[]"
+2014-01-15 10:25:48,837 [DEBUG] south: execute "ALTER TABLE "core_solution" ADD CONSTRAINT "issue_id_refs_id_09d7c0fc" FOREIGN KEY ("issue_id") REFERENCES "core_issue" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,842 [DEBUG] south: execute "CREATE INDEX "core_solution_issue_id" ON "core_solution" ("issue_id");" with params "[]"
+2014-01-15 10:25:48,852 [DEBUG] south: execute "ALTER TABLE "core_solution" ADD CONSTRAINT "programmer_id_refs_id_d8c51dbf" FOREIGN KEY ("programmer_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,859 [DEBUG] south: execute "CREATE INDEX "core_solution_programmer_id" ON "core_solution" ("programmer_id");" with params "[]"
+2014-01-15 10:25:48,867 [DEBUG] south: execute "ALTER TABLE "core_solutionhistevent" ADD CONSTRAINT "solution_id_refs_id_99a5c122" FOREIGN KEY ("solution_id") REFERENCES "core_solution" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,874 [DEBUG] south: execute "CREATE INDEX "core_solutionhistevent_solution_id" ON "core_solutionhistevent" ("solution_id");" with params "[]"
+2014-01-15 10:25:48,884 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD CONSTRAINT "offer_id_refs_id_20a99c68" FOREIGN KEY ("offer_id") REFERENCES "core_offer" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,891 [DEBUG] south: execute "CREATE INDEX "core_payment_offer_id" ON "core_payment" ("offer_id");" with params "[]"
+2014-01-15 10:25:48,899 [DEBUG] south: execute "ALTER TABLE "core_paymenthistevent" ADD CONSTRAINT "payment_id_refs_id_843ed2e8" FOREIGN KEY ("payment_id") REFERENCES "core_payment" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,905 [DEBUG] south: execute "CREATE INDEX "core_paymenthistevent_payment_id" ON "core_paymenthistevent" ("payment_id");" with params "[]"
+2014-01-15 10:25:48,915 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD CONSTRAINT "payment_id_refs_id_f598afaa" FOREIGN KEY ("payment_id") REFERENCES "core_payment" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,921 [DEBUG] south: execute "CREATE INDEX "core_paymentpart_payment_id" ON "core_paymentpart" ("payment_id");" with params "[]"
+2014-01-15 10:25:48,932 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD CONSTRAINT "programmer_id_refs_id_c983c7fa" FOREIGN KEY ("programmer_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:48,939 [DEBUG] south: execute "CREATE INDEX "core_paymentpart_programmer_id" ON "core_paymentpart" ("programmer_id");" with params "[]"
+2014-01-15 10:25:49,156 [DEBUG] south: execute "ALTER TABLE "core_offer" ADD COLUMN "expirationDate" date NULL;" with params "[]"
+2014-01-15 10:25:49,162 [DEBUG] south: execute "ALTER TABLE "core_offer" ALTER COLUMN "expirationDate" TYPE date, ALTER COLUMN "expirationDate" DROP NOT NULL, ALTER COLUMN "expirationDate" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:49,168 [DEBUG] south: execute "ALTER TABLE "core_offer" ADD COLUMN "no_forking" boolean NOT NULL DEFAULT True;" with params "[]"
+2014-01-15 10:25:49,208 [DEBUG] south: execute "ALTER TABLE "core_offer" ALTER COLUMN "no_forking" TYPE boolean, ALTER COLUMN "no_forking" SET NOT NULL, ALTER COLUMN "no_forking" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:49,214 [DEBUG] south: execute "ALTER TABLE "core_offer" ADD COLUMN "require_release" boolean NOT NULL DEFAULT True;" with params "[]"
+2014-01-15 10:25:49,256 [DEBUG] south: execute "ALTER TABLE "core_offer" ALTER COLUMN "require_release" TYPE boolean, ALTER COLUMN "require_release" SET NOT NULL, ALTER COLUMN "require_release" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:49,514 [DEBUG] south: execute "ALTER TABLE "core_offerhistevent" ADD COLUMN "expirationDate" date NULL;" with params "[]"
+2014-01-15 10:25:49,521 [DEBUG] south: execute "ALTER TABLE "core_offerhistevent" ALTER COLUMN "expirationDate" TYPE date, ALTER COLUMN "expirationDate" DROP NOT NULL, ALTER COLUMN "expirationDate" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:49,527 [DEBUG] south: execute "ALTER TABLE "core_offerhistevent" ADD COLUMN "no_forking" boolean NOT NULL DEFAULT True;" with params "[]"
+2014-01-15 10:25:49,565 [DEBUG] south: execute "ALTER TABLE "core_offerhistevent" ALTER COLUMN "no_forking" TYPE boolean, ALTER COLUMN "no_forking" SET NOT NULL, ALTER COLUMN "no_forking" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:49,571 [DEBUG] south: execute "ALTER TABLE "core_offerhistevent" ADD COLUMN "require_release" boolean NOT NULL DEFAULT True;" with params "[]"
+2014-01-15 10:25:49,605 [DEBUG] south: execute "ALTER TABLE "core_offerhistevent" ALTER COLUMN "require_release" TYPE boolean, ALTER COLUMN "require_release" SET NOT NULL, ALTER COLUMN "require_release" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:49,819 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "is_primary_email_verified" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:49,857 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "is_primary_email_verified" TYPE boolean, ALTER COLUMN "is_primary_email_verified" SET NOT NULL, ALTER COLUMN "is_primary_email_verified" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:49,862 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "is_paypal_email_verified" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:49,895 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "is_paypal_email_verified" TYPE boolean, ALTER COLUMN "is_paypal_email_verified" SET NOT NULL, ALTER COLUMN "is_paypal_email_verified" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:50,434 [DEBUG] south: execute "ALTER TABLE "core_issue" ADD COLUMN "is_feedback" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:50,475 [DEBUG] south: execute "ALTER TABLE "core_issue" ALTER COLUMN "is_feedback" TYPE boolean, ALTER COLUMN "is_feedback" SET NOT NULL, ALTER COLUMN "is_feedback" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:50,943 [DEBUG] south: execute "ALTER TABLE "core_issue" ADD COLUMN "is_public_suggestion" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:50,983 [DEBUG] south: execute "ALTER TABLE "core_issue" ALTER COLUMN "is_public_suggestion" TYPE boolean, ALTER COLUMN "is_public_suggestion" SET NOT NULL, ALTER COLUMN "is_public_suggestion" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:51,228 [DEBUG] south: execute "CREATE TABLE "core_issuewatch" ("id" serial NOT NULL PRIMARY KEY, "issue_id" integer NOT NULL, "user_id" integer NOT NULL, "reason" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:51,256 [DEBUG] south: execute "CREATE TABLE "core_offerwatch" ("id" serial NOT NULL PRIMARY KEY, "offer_id" integer NOT NULL, "user_id" integer NOT NULL, "reason" varchar(30) NOT NULL)" with params "[]"
+2014-01-15 10:25:51,271 [DEBUG] south: execute "ALTER TABLE "core_issuewatch" ADD CONSTRAINT "issue_id_refs_id_6f352eff" FOREIGN KEY ("issue_id") REFERENCES "core_issue" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:51,278 [DEBUG] south: execute "CREATE INDEX "core_issuewatch_issue_id" ON "core_issuewatch" ("issue_id");" with params "[]"
+2014-01-15 10:25:51,286 [DEBUG] south: execute "ALTER TABLE "core_issuewatch" ADD CONSTRAINT "user_id_refs_id_4c4fe0f1" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:51,293 [DEBUG] south: execute "CREATE INDEX "core_issuewatch_user_id" ON "core_issuewatch" ("user_id");" with params "[]"
+2014-01-15 10:25:51,302 [DEBUG] south: execute "ALTER TABLE "core_offerwatch" ADD CONSTRAINT "offer_id_refs_id_4ae30fd7" FOREIGN KEY ("offer_id") REFERENCES "core_offer" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:51,309 [DEBUG] south: execute "CREATE INDEX "core_offerwatch_offer_id" ON "core_offerwatch" ("offer_id");" with params "[]"
+2014-01-15 10:25:51,318 [DEBUG] south: execute "ALTER TABLE "core_offerwatch" ADD CONSTRAINT "user_id_refs_id_fa2cada4" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:51,324 [DEBUG] south: execute "CREATE INDEX "core_offerwatch_user_id" ON "core_offerwatch" ("user_id");" with params "[]"
+2014-01-15 10:25:51,817 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD COLUMN "paypalEmail" varchar(256) NULL;" with params "[]"
+2014-01-15 10:25:51,822 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "paypalEmail" TYPE varchar(256), ALTER COLUMN "paypalEmail" DROP NOT NULL, ALTER COLUMN "paypalEmail" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:52,281 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "hide_from_userlist" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:52,316 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "hide_from_userlist" TYPE boolean, ALTER COLUMN "hide_from_userlist" SET NOT NULL, ALTER COLUMN "hide_from_userlist" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:52,862 [DEBUG] south: execute "ALTER TABLE "core_issue" ADD COLUMN "updatedDate" timestamp with time zone NULL;" with params "[]"
+2014-01-15 10:25:52,866 [DEBUG] south: execute "ALTER TABLE "core_issue" ALTER COLUMN "updatedDate" TYPE timestamp with time zone, ALTER COLUMN "updatedDate" DROP NOT NULL, ALTER COLUMN "updatedDate" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:53,339 [DEBUG] south: execute "ALTER TABLE "core_solution" ADD COLUMN "accepting_payments" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:53,377 [DEBUG] south: execute "ALTER TABLE "core_solution" ALTER COLUMN "accepting_payments" TYPE boolean, ALTER COLUMN "accepting_payments" SET NOT NULL, ALTER COLUMN "accepting_payments" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:53,856 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD COLUMN "solution_id" integer NULL;" with params "[]"
+2014-01-15 10:25:53,860 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "solution_id" TYPE integer, ALTER COLUMN "solution_id" DROP NOT NULL, ALTER COLUMN "solution_id" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:53,864 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD CONSTRAINT "solution_id_refs_id_4c9b956e" FOREIGN KEY ("solution_id") REFERENCES "core_solution" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:53,870 [DEBUG] south: execute "CREATE INDEX "core_paymentpart_solution_id" ON "core_paymentpart" ("solution_id");" with params "[]"
+2014-01-15 10:25:54,558 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:54,705 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:54,741 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:54,829 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:54,849 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" DROP CONSTRAINT "solution_id_refs_id_4c9b956e"" with params "[]"
+2014-01-15 10:25:54,853 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "solution_id" TYPE integer, ALTER COLUMN "solution_id" DROP NOT NULL, ALTER COLUMN "solution_id" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:54,881 [DEBUG] south: execute "UPDATE "core_paymentpart" SET "solution_id"=%s WHERE "solution_id" IS NULL" with params "[-1]"
+2014-01-15 10:25:54,884 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "solution_id" SET NOT NULL;" with params "[]"
+2014-01-15 10:25:54,888 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD CONSTRAINT "solution_id_refs_id_4c9b956e" FOREIGN KEY ("solution_id") REFERENCES "core_solution" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:55,129 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "preferred_language_code" varchar(10) NULL;" with params "[]"
+2014-01-15 10:25:55,134 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "preferred_language_code" TYPE varchar(10), ALTER COLUMN "preferred_language_code" DROP NOT NULL, ALTER COLUMN "preferred_language_code" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:55,367 [DEBUG] south: execute "ALTER TABLE "core_offer" ADD COLUMN "currency" varchar(10) NOT NULL DEFAULT 'USD';" with params "[]"
+2014-01-15 10:25:55,417 [DEBUG] south: execute "ALTER TABLE "core_offer" ALTER COLUMN "currency" TYPE varchar(10), ALTER COLUMN "currency" SET NOT NULL, ALTER COLUMN "currency" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:55,647 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:25:55,725 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:25:55,741 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:25:55,817 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:25:55,833 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "fee" TYPE numeric(16, 8), ALTER COLUMN "fee" SET NOT NULL, ALTER COLUMN "fee" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:56,108 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,189 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,208 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,284 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,305 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "price" TYPE numeric(16, 8), ALTER COLUMN "price" SET NOT NULL, ALTER COLUMN "price" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:56,344 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,437 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,459 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,535 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:56,557 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "realprice" TYPE numeric(16, 8), ALTER COLUMN "realprice" SET NOT NULL, ALTER COLUMN "realprice" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:56,803 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "bitcoin_receive_address" varchar(128) NOT NULL DEFAULT '';" with params "[]"
+2014-01-15 10:25:56,838 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "bitcoin_receive_address" TYPE varchar(128), ALTER COLUMN "bitcoin_receive_address" SET NOT NULL, ALTER COLUMN "bitcoin_receive_address" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:57,104 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD COLUMN "bitcoin_receive_address_id" integer NULL;" with params "[]"
+2014-01-15 10:25:57,110 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "bitcoin_receive_address_id" TYPE integer, ALTER COLUMN "bitcoin_receive_address_id" DROP NOT NULL, ALTER COLUMN "bitcoin_receive_address_id" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:57,113 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD CONSTRAINT "bitcoin_receive_address_id_refs_id_51da79ba" FOREIGN KEY ("bitcoin_receive_address_id") REFERENCES "bitcoin_frespo_receiveaddress" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:57,120 [DEBUG] south: execute "CREATE INDEX "core_payment_bitcoin_receive_address_id" ON "core_payment" ("bitcoin_receive_address_id");" with params "[]"
+2014-01-15 10:25:57,375 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD COLUMN "bitcoin_transaction_hash" varchar(128) NULL;" with params "[]"
+2014-01-15 10:25:57,380 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "bitcoin_transaction_hash" TYPE varchar(128), ALTER COLUMN "bitcoin_transaction_hash" DROP NOT NULL, ALTER COLUMN "bitcoin_transaction_hash" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:57,642 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD COLUMN "total_bitcoin_received" numeric(16, 8) NULL;" with params "[]"
+2014-01-15 10:25:57,647 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "total_bitcoin_received" TYPE numeric(16, 8), ALTER COLUMN "total_bitcoin_received" DROP NOT NULL, ALTER COLUMN "total_bitcoin_received" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:57,980 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD COLUMN "money_sent_id" integer NULL;" with params "[]"
+2014-01-15 10:25:57,984 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "money_sent_id" TYPE integer, ALTER COLUMN "money_sent_id" DROP NOT NULL, ALTER COLUMN "money_sent_id" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:57,989 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ADD CONSTRAINT "money_sent_id_refs_id_d532d133" FOREIGN KEY ("money_sent_id") REFERENCES "bitcoin_frespo_moneysent" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:25:57,996 [DEBUG] south: execute "CREATE INDEX "core_paymentpart_money_sent_id" ON "core_paymentpart" ("money_sent_id");" with params "[]"
+2014-01-15 10:25:58,300 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "paypal_verified" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:58,335 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "paypal_verified" TYPE boolean, ALTER COLUMN "paypal_verified" SET NOT NULL, ALTER COLUMN "paypal_verified" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:58,564 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:58,637 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:58,659 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:58,720 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_paymentpart']"
+2014-01-15 10:25:58,742 [DEBUG] south: execute "ALTER TABLE "core_paymentpart" ALTER COLUMN "realprice" TYPE numeric(16, 8), ALTER COLUMN "realprice" DROP NOT NULL, ALTER COLUMN "realprice" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:59,120 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "receiveEmail_issue_comments" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:59,150 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "receiveEmail_issue_comments" TYPE boolean, ALTER COLUMN "receiveEmail_issue_comments" SET NOT NULL, ALTER COLUMN "receiveEmail_issue_comments" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:59,155 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "receiveEmail_issue_work" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:59,187 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "receiveEmail_issue_work" TYPE boolean, ALTER COLUMN "receiveEmail_issue_work" SET NOT NULL, ALTER COLUMN "receiveEmail_issue_work" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:59,191 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "receiveEmail_issue_offer" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:59,232 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "receiveEmail_issue_offer" TYPE boolean, ALTER COLUMN "receiveEmail_issue_offer" SET NOT NULL, ALTER COLUMN "receiveEmail_issue_offer" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:59,239 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "receiveEmail_issue_payment" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:59,270 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "receiveEmail_issue_payment" TYPE boolean, ALTER COLUMN "receiveEmail_issue_payment" SET NOT NULL, ALTER COLUMN "receiveEmail_issue_payment" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:59,275 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ADD COLUMN "receiveEmail_announcements" boolean NOT NULL DEFAULT False;" with params "[]"
+2014-01-15 10:25:59,306 [DEBUG] south: execute "ALTER TABLE "core_userinfo" ALTER COLUMN "receiveEmail_announcements" TYPE boolean, ALTER COLUMN "receiveEmail_announcements" SET NOT NULL, ALTER COLUMN "receiveEmail_announcements" DROP DEFAULT;" with params "[]"
+2014-01-15 10:25:59,791 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD COLUMN "bitcoin_fee" numeric(16, 8) NULL;" with params "[]"
+2014-01-15 10:25:59,796 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "bitcoin_fee" TYPE numeric(16, 8), ALTER COLUMN "bitcoin_fee" DROP NOT NULL, ALTER COLUMN "bitcoin_fee" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:00,121 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD COLUMN "offer_currency" varchar(10) NULL;" with params "[]"
+2014-01-15 10:26:00,125 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "offer_currency" TYPE varchar(10), ALTER COLUMN "offer_currency" DROP NOT NULL, ALTER COLUMN "offer_currency" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:00,132 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD COLUMN "offer2payment_suggested_rate" numeric(16, 8) NULL;" with params "[]"
+2014-01-15 10:26:00,135 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "offer2payment_suggested_rate" TYPE numeric(16, 8), ALTER COLUMN "offer2payment_suggested_rate" DROP NOT NULL, ALTER COLUMN "offer2payment_suggested_rate" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:00,147 [DEBUG] south: execute "ALTER TABLE "core_payment" ADD COLUMN "usd2payment_rate" numeric(16, 8) NULL;" with params "[]"
+2014-01-15 10:26:00,152 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "usd2payment_rate" TYPE numeric(16, 8), ALTER COLUMN "usd2payment_rate" DROP NOT NULL, ALTER COLUMN "usd2payment_rate" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:00,562 [DEBUG] south: execute "ALTER TABLE "core_project" ADD COLUMN "image3x1" varchar(100) NULL;" with params "[]"
+2014-01-15 10:26:00,565 [DEBUG] south: execute "ALTER TABLE "core_project" ALTER COLUMN "image3x1" TYPE varchar(100), ALTER COLUMN "image3x1" DROP NOT NULL, ALTER COLUMN "image3x1" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:00,699 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:26:00,734 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:26:00,747 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:26:00,822 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_payment']"
+2014-01-15 10:26:00,830 [DEBUG] south: execute "ALTER TABLE "core_payment" ALTER COLUMN "total" TYPE numeric(16, 8), ALTER COLUMN "total" SET NOT NULL, ALTER COLUMN "total" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:00,979 [DEBUG] south: execute "CREATE TABLE "core_actionlog" ("id" serial NOT NULL PRIMARY KEY, "action" varchar(128) NOT NULL, "entity" varchar(30) NOT NULL, "old_json" text NOT NULL, "new_json" text NOT NULL, "creationDate" timestamp with time zone NOT NULL, "user_id" integer NULL, "project_id" integer NULL, "issue_id" integer NULL, "offer_id" integer NULL, "solution_id" integer NULL, "issue_comment_id" integer NULL)" with params "[]"
+2014-01-15 10:26:01,001 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD CONSTRAINT "user_id_refs_id_06071976" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:01,008 [DEBUG] south: execute "CREATE INDEX "core_actionlog_user_id" ON "core_actionlog" ("user_id");" with params "[]"
+2014-01-15 10:26:01,014 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD CONSTRAINT "project_id_refs_id_286c13dd" FOREIGN KEY ("project_id") REFERENCES "core_project" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:01,016 [DEBUG] south: execute "CREATE INDEX "core_actionlog_project_id" ON "core_actionlog" ("project_id");" with params "[]"
+2014-01-15 10:26:01,022 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD CONSTRAINT "issue_id_refs_id_0d6ea8fb" FOREIGN KEY ("issue_id") REFERENCES "core_issue" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:01,025 [DEBUG] south: execute "CREATE INDEX "core_actionlog_issue_id" ON "core_actionlog" ("issue_id");" with params "[]"
+2014-01-15 10:26:01,032 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD CONSTRAINT "offer_id_refs_id_170ff496" FOREIGN KEY ("offer_id") REFERENCES "core_offer" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:01,044 [DEBUG] south: execute "CREATE INDEX "core_actionlog_offer_id" ON "core_actionlog" ("offer_id");" with params "[]"
+2014-01-15 10:26:01,052 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD CONSTRAINT "solution_id_refs_id_3a3643a9" FOREIGN KEY ("solution_id") REFERENCES "core_solution" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:01,059 [DEBUG] south: execute "CREATE INDEX "core_actionlog_solution_id" ON "core_actionlog" ("solution_id");" with params "[]"
+2014-01-15 10:26:01,068 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD CONSTRAINT "issue_comment_id_refs_id_1ed8781b" FOREIGN KEY ("issue_comment_id") REFERENCES "core_issuecomment" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:01,076 [DEBUG] south: execute "CREATE INDEX "core_actionlog_issue_comment_id" ON "core_actionlog" ("issue_comment_id");" with params "[]"
+2014-01-15 10:26:01,258 [DEBUG] south: execute "ALTER TABLE "core_issue" ADD COLUMN "trackerURL_noprotocol" varchar(200) NULL;" with params "[]"
+2014-01-15 10:26:01,263 [DEBUG] south: execute "ALTER TABLE "core_issue" ALTER COLUMN "trackerURL_noprotocol" TYPE varchar(200), ALTER COLUMN "trackerURL_noprotocol" DROP NOT NULL, ALTER COLUMN "trackerURL_noprotocol" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:02,164 [DEBUG] south: execute "ALTER TABLE "core_issue" ADD COLUMN "status" varchar(40) NOT NULL DEFAULT 'EMPTY';" with params "[]"
+2014-01-15 10:26:02,208 [DEBUG] south: execute "ALTER TABLE "core_issue" ALTER COLUMN "status" TYPE varchar(40), ALTER COLUMN "status" SET NOT NULL, ALTER COLUMN "status" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:02,802 [DEBUG] south: execute "ALTER TABLE "core_project" ADD COLUMN "description" text NULL;" with params "[]"
+2014-01-15 10:26:02,807 [DEBUG] south: execute "ALTER TABLE "core_project" ALTER COLUMN "description" TYPE text, ALTER COLUMN "description" DROP NOT NULL, ALTER COLUMN "description" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:03,107 [DEBUG] south: execute "CREATE TABLE "core_tag" ("id" serial NOT NULL PRIMARY KEY, "name" varchar(200) NOT NULL, "objtype" varchar(200) NOT NULL, "objid" integer NOT NULL)" with params "[]"
+2014-01-15 10:26:04,635 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:04,720 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:04,739 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:04,824 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:04,850 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ALTER COLUMN "old_json" TYPE text, ALTER COLUMN "old_json" DROP NOT NULL, ALTER COLUMN "old_json" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:04,853 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:04,944 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:04,969 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:05,057 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_actionlog']"
+2014-01-15 10:26:05,083 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ALTER COLUMN "new_json" TYPE text, ALTER COLUMN "new_json" DROP NOT NULL, ALTER COLUMN "new_json" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:06,480 [DEBUG] south: execute "ALTER TABLE "core_issuewatch" RENAME TO "core_watch";" with params "[]"
+2014-01-15 10:26:06,485 [DEBUG] south: execute "
+            SELECT 1
+            FROM information_schema.sequences
+            WHERE sequence_name = %s
+            " with params "['core_issuewatch_id_seq']"
+2014-01-15 10:26:06,491 [DEBUG] south: execute "ALTER TABLE "core_issuewatch_id_seq" RENAME TO "core_watch_id_seq";" with params "[]"
+2014-01-15 10:26:06,493 [DEBUG] south: execute "
+            SELECT pg_index.indexrelid::regclass
+            FROM pg_index, pg_attribute
+            WHERE
+              indrelid = %s::regclass AND
+              pg_attribute.attrelid = indrelid AND
+              pg_attribute.attnum = any(pg_index.indkey)
+              AND indisprimary
+            " with params "['core_watch']"
+2014-01-15 10:26:06,799 [DEBUG] south: execute "ALTER TABLE "core_watch" ADD COLUMN "entity" varchar(60) NOT NULL DEFAULT 'ISSUE';" with params "[]"
+2014-01-15 10:26:06,846 [DEBUG] south: execute "ALTER TABLE "core_watch" ALTER COLUMN "entity" TYPE varchar(60), ALTER COLUMN "entity" SET NOT NULL, ALTER COLUMN "entity" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:07,108 [DEBUG] south: execute "ALTER TABLE "core_watch" ADD COLUMN "objid" integer NOT NULL DEFAULT -1;" with params "[]"
+2014-01-15 10:26:07,140 [DEBUG] south: execute "ALTER TABLE "core_watch" ALTER COLUMN "objid" TYPE integer, ALTER COLUMN "objid" SET NOT NULL, ALTER COLUMN "objid" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:07,724 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_watch']"
+2014-01-15 10:26:07,805 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_watch']"
+2014-01-15 10:26:07,819 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.constraint_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_watch']"
+2014-01-15 10:26:07,888 [DEBUG] south: execute "
+                SELECT kc.constraint_name, kc.column_name, c.constraint_type
+                FROM information_schema.key_column_usage AS kc
+                JOIN information_schema.table_constraints AS c ON
+                    kc.table_schema = c.table_schema AND
+                    kc.table_name = c.table_name AND
+                    kc.constraint_name = c.constraint_name
+                WHERE
+                    kc.table_schema = %s AND
+                    kc.table_name = %s
+            " with params "['public', 'core_watch']"
+2014-01-15 10:26:07,902 [DEBUG] south: execute "ALTER TABLE "core_watch" DROP CONSTRAINT "issue_id_refs_id_6f352eff"" with params "[]"
+2014-01-15 10:26:07,905 [DEBUG] south: execute "ALTER TABLE "core_watch" ALTER COLUMN "issue_id" TYPE integer, ALTER COLUMN "issue_id" DROP NOT NULL, ALTER COLUMN "issue_id" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:07,917 [DEBUG] south: execute "ALTER TABLE "core_watch" ADD CONSTRAINT "issue_id_refs_id_0805470c" FOREIGN KEY ("issue_id") REFERENCES "core_issue" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:08,139 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD COLUMN "payment_id" integer NULL;" with params "[]"
+2014-01-15 10:26:08,143 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ALTER COLUMN "payment_id" TYPE integer, ALTER COLUMN "payment_id" DROP NOT NULL, ALTER COLUMN "payment_id" DROP DEFAULT;" with params "[]"
+2014-01-15 10:26:08,145 [DEBUG] south: execute "ALTER TABLE "core_actionlog" ADD CONSTRAINT "payment_id_refs_id_81e22538" FOREIGN KEY ("payment_id") REFERENCES "core_payment" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:08,153 [DEBUG] south: execute "CREATE INDEX "core_actionlog_payment_id" ON "core_actionlog" ("payment_id");" with params "[]"
+2014-01-15 10:26:09,965 [DEBUG] south: execute "CREATE TABLE "gh_frespo_integration_issuealreadycommented" ("id" serial NOT NULL PRIMARY KEY, "repo_id" integer NOT NULL, "number" integer NOT NULL)" with params "[]"
+2014-01-15 10:26:09,996 [DEBUG] south: execute "CREATE TABLE "gh_frespo_integration_repo" ("id" serial NOT NULL PRIMARY KEY, "owner" varchar(256) NOT NULL, "owner_type" varchar(32) NOT NULL, "name" varchar(256) NOT NULL, "gh_id" varchar(32) NOT NULL, "createdByUser_id" integer NOT NULL, "creationDate" timestamp with time zone NOT NULL)" with params "[]"
+2014-01-15 10:26:10,027 [DEBUG] south: execute "CREATE TABLE "gh_frespo_integration_userrepoconfig" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "repo_id" integer NOT NULL, "add_links" boolean NOT NULL, "new_only" boolean NOT NULL, "creationDate" timestamp with time zone NOT NULL, "last_ran" timestamp with time zone NOT NULL, "already_did_old" boolean NOT NULL)" with params "[]"
+2014-01-15 10:26:10,046 [DEBUG] south: execute "ALTER TABLE "gh_frespo_integration_issuealreadycommented" ADD CONSTRAINT "repo_id_refs_id_e2f7068c" FOREIGN KEY ("repo_id") REFERENCES "gh_frespo_integration_repo" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:10,054 [DEBUG] south: execute "CREATE INDEX "gh_frespo_integration_issuealreadycommented_repo_id" ON "gh_frespo_integration_issuealreadycommented" ("repo_id");" with params "[]"
+2014-01-15 10:26:10,065 [DEBUG] south: execute "ALTER TABLE "gh_frespo_integration_repo" ADD CONSTRAINT "createdByUser_id_refs_id_80affe21" FOREIGN KEY ("createdByUser_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:10,073 [DEBUG] south: execute "CREATE INDEX "gh_frespo_integration_repo_createdByUser_id" ON "gh_frespo_integration_repo" ("createdByUser_id");" with params "[]"
+2014-01-15 10:26:10,084 [DEBUG] south: execute "ALTER TABLE "gh_frespo_integration_userrepoconfig" ADD CONSTRAINT "user_id_refs_id_ffd5ae86" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:10,094 [DEBUG] south: execute "CREATE INDEX "gh_frespo_integration_userrepoconfig_user_id" ON "gh_frespo_integration_userrepoconfig" ("user_id");" with params "[]"
+2014-01-15 10:26:10,104 [DEBUG] south: execute "ALTER TABLE "gh_frespo_integration_userrepoconfig" ADD CONSTRAINT "repo_id_refs_id_0787f63e" FOREIGN KEY ("repo_id") REFERENCES "gh_frespo_integration_repo" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:10,111 [DEBUG] south: execute "CREATE INDEX "gh_frespo_integration_userrepoconfig_repo_id" ON "gh_frespo_integration_userrepoconfig" ("repo_id");" with params "[]"
+2014-01-15 10:26:10,631 [DEBUG] south: execute "CREATE TABLE "social_auth_usersocialauth" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "provider" varchar(32) NOT NULL, "uid" varchar(255) NOT NULL, "extra_data" text NOT NULL)" with params "[]"
+2014-01-15 10:26:10,664 [DEBUG] south: execute "ALTER TABLE "social_auth_usersocialauth" ADD CONSTRAINT "social_auth_usersocialauth_provider_2f763109e2c4a1fb_uniq" UNIQUE ("provider", "uid")" with params "[]"
+2014-01-15 10:26:10,681 [DEBUG] south: execute "CREATE TABLE "social_auth_nonce" ("id" serial NOT NULL PRIMARY KEY, "server_url" varchar(255) NOT NULL, "timestamp" integer NOT NULL, "salt" varchar(40) NOT NULL)" with params "[]"
+2014-01-15 10:26:10,704 [DEBUG] south: execute "CREATE TABLE "social_auth_association" ("id" serial NOT NULL PRIMARY KEY, "server_url" varchar(255) NOT NULL, "handle" varchar(255) NOT NULL, "secret" varchar(255) NOT NULL, "issued" integer NOT NULL, "lifetime" integer NOT NULL, "assoc_type" varchar(64) NOT NULL)" with params "[]"
+2014-01-15 10:26:10,733 [DEBUG] south: execute "ALTER TABLE "social_auth_usersocialauth" ADD CONSTRAINT "user_id_refs_id_e6cbdf29" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;" with params "[]"
+2014-01-15 10:26:10,743 [DEBUG] south: execute "CREATE INDEX "social_auth_usersocialauth_user_id" ON "social_auth_usersocialauth" ("user_id");" with params "[]"
+2014-01-15 10:26:10,866 [DEBUG] south: execute "CREATE INDEX "social_auth_nonce_timestamp" ON "social_auth_nonce" ("timestamp");" with params "[]"
+2014-01-15 10:26:10,879 [DEBUG] south: execute "ALTER TABLE "social_auth_nonce" ADD CONSTRAINT "social_auth_nonce_timestamp_3833ba21ef52524a_uniq" UNIQUE ("timestamp", "salt", "server_url")" with params "[]"
+2014-01-15 10:26:10,889 [DEBUG] south: execute "CREATE INDEX "social_auth_association_issued" ON "social_auth_association" ("issued");" with params "[]"
+2014-01-15 10:26:10,899 [DEBUG] south: execute "ALTER TABLE "social_auth_association" ADD CONSTRAINT "social_auth_association_handle_693a924207fa6ae_uniq" UNIQUE ("handle", "server_url")" with params "[]"
+2014-01-15 10:26:36,113 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 10:27:25,999 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 5, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+2014-01-15 10:27:27,478 [ERROR] django.request: Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 573, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 453, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 5, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+2014-01-15 10:27:28,056 [ERROR] django.request: Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 573, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 453, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 5, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+2014-01-15 12:08:02,878 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 12:11:41,213 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 12:12:02,828 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 12:12:22,376 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 5, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+2014-01-15 12:15:19,322 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 12:15:33,224 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 16, in <module>
+    url(r'^faq$', direct_to_template, {'template': 'core2/faq.html'}),
+NameError: name 'direct_to_template' is not defined
+2014-01-15 18:38:48,447 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 18:38:58,595 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 16, in <module>
+    url(r'^faq$', direct_to_template, {'template': 'core2/faq.html'}),
+NameError: name 'direct_to_template' is not defined
+2014-01-15 18:39:00,023 [ERROR] django.request: Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 573, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 453, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 16, in <module>
+    url(r'^faq$', direct_to_template, {'template': 'core2/faq.html'}),
+NameError: name 'direct_to_template' is not defined
+2014-01-15 18:39:01,283 [ERROR] django.request: Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 573, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 453, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 16, in <module>
+    url(r'^faq$', direct_to_template, {'template': 'core2/faq.html'}),
+NameError: name 'direct_to_template' is not defined
+2014-01-15 18:41:44,810 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 18:41:49,023 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 18, in <module>
+    url(r'^core/', include('core.urls')),
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/core/urls/__init__.py", line 4, in <module>
+    from django.views.generic.simple import redirect_to, direct_to_template
+ImportError: No module named simple
+2014-01-15 19:17:09,346 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 19:17:15,377 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 22, in <module>
+    url(r'^sandbox/', include('sandbox.urls')),
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/sandbox/urls.py", line 2, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+2014-01-15 19:17:17,105 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 22, in <module>
+    url(r'^sandbox/', include('sandbox.urls')),
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/sandbox/urls.py", line 2, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+2014-01-15 19:17:22,903 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 22, in <module>
+    url(r'^sandbox/', include('sandbox.urls')),
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/sandbox/urls.py", line 2, in <module>
+    from django.views.generic.simple import direct_to_template
+ImportError: No module named simple
+2014-01-15 19:21:59,586 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 19:22:04,371 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 22, in <module>
+    url(r'^sandbox/', include('sandbox.urls')),
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/sandbox/urls.py", line 2, in <module>
+    from django.shortcut import render
+ImportError: No module named shortcut
+2014-01-15 19:32:19,567 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 19:32:24,344 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 341, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/frespo/urls.py", line 22, in <module>
+    url(r'^sandbox/', include('sandbox.urls')),
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/eahn/www.freedomsponsors.org/djangoproject/sandbox/urls.py", line 2, in <module>
+    from django.conf.shortcut import render
+ImportError: No module named shortcut
+2014-01-15 19:43:12,211 [WARNING] py.warnings: /home/eahn/www.freedomsponsors.org/djangoproject/social_auth/fields.py:3: DeprecationWarning: django.utils.simplejson is deprecated; use json instead.
+  from django.utils import simplejson
+
+2014-01-15 19:43:16,417 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 318, in resolve
+    for pattern in self.url_patterns:
+  File "/home/eahn/www.freedomsponsors.org/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 346, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)

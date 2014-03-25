@@ -1,0 +1,134 @@
+{% extends "core/empty_base.html" %}
+{% load i18n %}
+{% block body %}
+
+  <style type="text/css">
+  /* Start by setting display:none to make this hidden.
+     Then we position it in relation to the viewport window
+     with position:fixed. Width, height, top and left speak
+     speak for themselves. Background we set to 80% white with
+     our animation centered, and no-repeating */
+  .modal_ajax {
+      display:    none;
+      position:   fixed;
+      z-index:    1000;
+      top:        0;
+      left:       0;
+      height:     100%;
+      width:      100%;
+      background: rgba( 255, 255, 255, .8 ) 
+                  url('/static/img/loading.gif') 
+                  50% 50% 
+                  no-repeat;
+  }
+
+  /* When the body has the loading class, we turn
+     the scrollbar off with overflow:hidden */
+  body.loading {
+      overflow: hidden;   
+  }
+
+  /* Anytime the body has the loading class, our
+     modal element will be visible */
+  body.loading .modal_ajax {
+      display: block;
+  }
+  </style>
+
+    {% include "core/navbar.html" %}
+    <div class="container-fluid">
+        <a target="_blank" href="https://github.com/freedomsponsors/www.freedomsponsors.org"><img style="position: absolute; top: 43px; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
+
+      <!-- messages -->
+      {% include "core/popup/popup_messages.html" %}
+
+      <!-- 3tops -->
+      <div id="base-top" class="row-fluid" style="">
+        <div class="span2">
+        {% block topleft %}
+        {% endblock %}
+        </div>
+        <div class="span8">
+        {% block topmiddle %}
+        {% endblock %}
+        </div>
+        <div class="span2" style="">
+        {% block topright %}
+        {% endblock %}
+        </div>
+      </div>
+      
+      <!-- main -->
+      <div id="base-main" class="row-fluid">
+        <div class="span1">
+        </div><!--/span-->
+        <div class="span10">
+          {% if show_alert %}
+          {% include show_alert %}
+          {% endif %}
+
+            <!-- general purpose modal for displaying Ajax-loaded content -->
+            <div class="modal hide fade in" id="ajax_popup_modal">
+            </div>
+            <div id="main-content">
+          {% block mainContent %}
+            <p> put some content here </p>
+          {% endblock %}
+            </div>
+        </div><!--/span-->
+
+        <div class="span1">
+        </div>
+      </div><!--/row-->
+
+
+    </div>
+
+      <hr>
+
+      <div class="navbar navbar-fixed-bottom" style="height: 30px">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <div class="row-fluid" style="">
+              <div class="span1"></div>
+              <div class="span10">
+                <p style="text-align:center">© FreedomSponsors 2012 
+                  | <a target="_about" href="http://blog.freedomsponsors.org/about">{% trans "About" %}</a> 
+                  | <a target="_about" href="http://blog.freedomsponsors.org/faq">{% trans "FAQ" %}</a>
+                  | <a target="_about" href="http://blog.freedomsponsors.org/developers">{% trans "Developers" %}</a>
+                  | <a href="{% url "core.views.feedback_views.feedback" %}">{% trans "Feedback" %}</a>
+                  | <a href="/core/project">{% trans "Project list" %}</a>
+                  | <a href="http://www.facebook.com/freedomsponsors" target="_facebook">{% trans "Facebook" %}</a>
+                  | <a href="http://www.twitter.com/freedomsponsors" target="_twitter">{% trans "Twitter" %}</a>
+                  | <a href="/core/jslic" rel="jslicense">{% trans "JavaScript license information" %}</a>
+                </p>
+              </div>
+              <div class="span1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal_ajax"></div>
+    </div><!--/.fluid-container-->
+    
+  <script>
+    $(function(){
+      $('.popopo').popover({trigger:'hover'})
+      $(".popopo_stay")
+          .popover({
+              offset: 10,
+              trigger: 'manual',
+              animate: false,
+              html: true,
+              placement: 'left',
+              template: '<div class="popover" onmouseover="$(this).mouseleave(function() {$(this).hide(); });"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+
+          }).click(function(e) {
+              e.preventDefault() ;
+          }).mouseenter(function(e) {
+              $(this).popover('show');
+          });
+    });
+  </script>
+
+{% endblock body %}

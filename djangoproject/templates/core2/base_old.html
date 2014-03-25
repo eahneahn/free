@@ -1,0 +1,23 @@
+{% extends "core2/empty_base.html" %}
+{% load i18n %}
+{% block head %}
+{% endblock %}
+{% block body %}
+    {% if show_alert %}
+        {% include show_alert %}
+    {% endif %}
+    <!-- Wrapper for sticky footer -->
+    <div class="non-footer-wrapper">
+        {% include "core2/include/navbar.html" %}
+        <div id="bootstrap-content" class="content" align="center">
+			<div class="content-section" align="left">
+				<div class="row-fluid">
+					{% block mainContent%}
+					{% endblock mainContent%}
+				</div>
+			</div>
+        </div>
+    </div>
+    <div class="modal_ajax"></div>
+    {% include "core2/include/footer.html" %}
+{% endblock body %}

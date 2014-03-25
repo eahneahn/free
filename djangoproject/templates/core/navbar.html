@@ -1,0 +1,58 @@
+{% load i18n %}
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <!-- <a class="brand" href="/">FreedomSponsors.org<span style="font-size:13px"> (beta)</a> -->
+          <a class="brand" href="/" style="padding-top:0px;padding-bottom:0px;"><img id="upper_left_brand" src="/static/img/FS_name.png"></a>
+{% if user and user.is_authenticated %}
+          <div class="btn-group pull-right">
+            <a id="a_userMenu" class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="icon-user"></i> {{ user.getUserInfo.screenName }}
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ user.get_view_link }}">{% trans "View Profile" %}</a></li>
+              <li><a href="{% url "core.views.user_views.editUserForm" %}">{% trans "Edit Profile" %}</a></li>
+  {% if user.has_usable_password %}
+              <li><a href="/accounts/password/change">{% trans "Change password" %}</a></li>
+  {% endif %}
+{% if user and user.is_authenticated %}
+              <li class="divider"></li>
+              <li><a href="/core/myissues">{% trans "My issues" %}</a></li>
+  {% if user.github_username %}
+              <li class="divider"></li>
+              <li><a href="/github/configure">{% trans "Github Settings" %}</a></li>
+  {% endif %}
+{% endif %}
+              <li class="divider"></li>
+              <li><a href="/core/logout">{% trans "Sign Out" %}</a></li>
+            </ul>
+          </div>
+{% else %}
+          <a id="login_button" class="btn btn-inverse pull-right" href="/core/login">
+            {% trans "Log in / Register" %}
+          </a>
+{% endif %}
+          <a class="btn btn-inverse pull-right" href="/core/issue/add">
+            <i class="icon-plus icon-white"></i> 
+            {% trans "Sponsor new issue" %}
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a target="_about" href="http://blog.freedomsponsors.org/about">{% trans "About" %}</a></li>
+              <li><a href="/core/issue">{% trans "Search" %}</a></li>
+              <li><a href="/core/stats">{% trans "Stats" %}</a></li>
+              <li><a href="{% url "core.views.user_views.listUsers" %}">{% trans "Users" %}</a></li>
+              <li><a href="{% url "core.views.feedback_views.feedback" %}">{% trans "Feedback" %}</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+          {% block menuItems %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
